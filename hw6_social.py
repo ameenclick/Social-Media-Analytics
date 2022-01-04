@@ -1,7 +1,7 @@
 """
 Social Media Analytics Project
-Name:
-Roll Number:
+Name: Ameen N.A
+Roll Number: 2021-IIITH-C2-002
 """
 
 import hw6_social_tests as test
@@ -11,6 +11,7 @@ project = "Social" # don't edit this
 ### PART 1 ###
 
 import pandas as pd
+import re
 import nltk
 nltk.download('vader_lexicon', quiet=True)
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
@@ -25,7 +26,8 @@ Parameters: str
 Returns: dataframe
 '''
 def makeDataFrame(filename):
-    return
+    df=pd.read_csv(filename)
+    return df
 
 
 '''
@@ -35,7 +37,15 @@ Parameters: str
 Returns: str
 '''
 def parseName(fromString):
-    return
+    str=fromString.replace("From: ","").split(" ")
+    result=""
+    for each in str:
+        if(each.find("(") == -1):
+            if(result != ""):
+                result+=" "
+            result+=each
+        else:
+            return result
 
 
 '''
@@ -45,7 +55,10 @@ Parameters: str
 Returns: str
 '''
 def parsePosition(fromString):
-    return
+    str=fromString.replace("From: ","").split(" ")
+    for each in str:
+        if(each.find("(") != -1):
+            return each[1:]
 
 
 '''
@@ -55,7 +68,9 @@ Parameters: str
 Returns: str
 '''
 def parseState(fromString):
-    return
+    startIndex=fromString.find("from ")+5
+    endIndex=fromString.find(")")
+    return fromString[startIndex:endIndex]
 
 
 '''
@@ -64,8 +79,19 @@ findHashtags(message)
 Parameters: str
 Returns: list of strs
 '''
+#https://note.nkmk.me/en/python-str-replace-translate-re-sub/ (Referred)
 def findHashtags(message):
-    return
+    strLst=message.split(" ")
+    resLst=[]
+    for each in strLst:
+        if each.find("#") != -1:
+            index=each.find("#")
+            each=re.sub("[^\w#]\w*","",each[index:])
+            each=each.split("#")
+            for all in each:
+                if(all != ""):
+                    resLst.append("#"+all)
+    return resLst
 
 
 '''
@@ -75,7 +101,7 @@ Parameters: dataframe ; str
 Returns: str
 '''
 def getRegionFromState(stateDf, state):
-    return
+    return stateDf.loc[stateDf["state"] == state, "region"].values[0]
 
 
 '''
@@ -85,6 +111,24 @@ Parameters: dataframe ; dataframe
 Returns: None
 '''
 def addColumns(data, stateDf):
+    names=[]
+    positions=[]
+    states=[]
+    regions=[]
+    hashtags=[]
+    for index, rows in data.iterrows():
+        str=rows["label"]
+        names.append(parseName(str))
+        positions.append(parsePosition(str))
+        state=parseState(str)
+        states.append(state)
+        regions.append(getRegionFromState(stateDf,state))
+        hashtags.append(findHashtags(rows["text"]))
+    data['name']=names
+    data['position']=positions
+    data['state']=states
+    data['region']=regions
+    data['hashtags']=hashtags
     return
 
 
@@ -263,9 +307,15 @@ def scatterPlot(xValues, yValues, labels, title):
 # This code runs the test cases to check your work
 if __name__ == "__main__":
     print("\n" + "#"*15 + " WEEK 1 TESTS " +  "#" * 16 + "\n")
-    test.week1Tests()
+    # test.testParseName()
+    # test.testParsePosition()
+    # test.testParseState()
+    test.testFindHashtags()
+    test.testGetRegionFromState()
+    test.testAddColumns()
+    #test.week1Tests()
     print("\n" + "#"*15 + " WEEK 1 OUTPUT " + "#" * 15 + "\n")
-    test.runWeek1()
+    #test.runWeek1()
 
     ## Uncomment these for Week 2 ##
     """print("\n" + "#"*15 + " WEEK 2 TESTS " +  "#" * 16 + "\n")
