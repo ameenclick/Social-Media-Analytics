@@ -79,8 +79,19 @@ findHashtags(message)
 Parameters: str
 Returns: list of strs
 '''
+#https://note.nkmk.me/en/python-str-replace-translate-re-sub/ (Referred)
 def findHashtags(message):
-    return
+    strLst=message.split(" ")
+    resLst=[]
+    for each in strLst:
+        if each.find("#") != -1:
+            index=each.find("#")
+            each=re.sub("[^\w#]\w*","",each[index:])
+            each=each.split("#")
+            for all in each:
+                if(all != ""):
+                    resLst.append("#"+all)
+    return resLst
 
 
 '''
@@ -278,9 +289,10 @@ def scatterPlot(xValues, yValues, labels, title):
 # This code runs the test cases to check your work
 if __name__ == "__main__":
     print("\n" + "#"*15 + " WEEK 1 TESTS " +  "#" * 16 + "\n")
-    test.testParseName()
-    test.testParsePosition()
-    test.testParseState()
+    # test.testParseName()
+    # test.testParsePosition()
+    # test.testParseState()
+    test.testFindHashtags()
     #test.week1Tests()
     print("\n" + "#"*15 + " WEEK 1 OUTPUT " + "#" * 15 + "\n")
     #test.runWeek1()
