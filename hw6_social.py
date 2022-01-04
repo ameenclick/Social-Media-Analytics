@@ -11,6 +11,7 @@ project = "Social" # don't edit this
 ### PART 1 ###
 
 import pandas as pd
+import re
 import nltk
 nltk.download('vader_lexicon', quiet=True)
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
@@ -36,7 +37,15 @@ Parameters: str
 Returns: str
 '''
 def parseName(fromString):
-    return
+    str=fromString.replace("From: ","").split(" ")
+    result=""
+    for each in str:
+        if(each.find("(") == -1):
+            if(result != ""):
+                result+=" "
+            result+=each
+        else:
+            return result
 
 
 '''
@@ -46,7 +55,10 @@ Parameters: str
 Returns: str
 '''
 def parsePosition(fromString):
-    return
+    str=fromString.replace("From: ","").split(" ")
+    for each in str:
+        if(each.find("(") != -1):
+            return each[1:]
 
 
 '''
@@ -56,7 +68,9 @@ Parameters: str
 Returns: str
 '''
 def parseState(fromString):
-    return
+    startIndex=fromString.find("from ")+5
+    endIndex=fromString.find(")")
+    return fromString[startIndex:endIndex]
 
 
 '''
@@ -264,7 +278,9 @@ def scatterPlot(xValues, yValues, labels, title):
 # This code runs the test cases to check your work
 if __name__ == "__main__":
     print("\n" + "#"*15 + " WEEK 1 TESTS " +  "#" * 16 + "\n")
-    test.testMakeDataFrame()
+    test.testParseName()
+    test.testParsePosition()
+    test.testParseState()
     #test.week1Tests()
     print("\n" + "#"*15 + " WEEK 1 OUTPUT " + "#" * 15 + "\n")
     #test.runWeek1()
