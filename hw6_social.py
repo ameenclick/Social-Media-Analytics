@@ -158,6 +158,10 @@ Returns: None
 '''
 def addSentimentColumn(data):
     classifier = SentimentIntensityAnalyzer()
+    sentiments=[]
+    for index, row in data.iterrows():
+        sentiments.append(findSentiment(classifier,row['text']))
+    data['sentiment']=sentiments
     return
 
 
@@ -313,6 +317,7 @@ def scatterPlot(xValues, yValues, labels, title):
 if __name__ == "__main__":
     print("\n" + "#"*15 + " WEEK 1 TESTS " +  "#" * 16 + "\n")
     test.testFindSentiment()
+    test.testAddSentimentColumn()
     #test.week1Tests()
     print("\n" + "#"*15 + " WEEK 1 OUTPUT " + "#" * 15 + "\n")
     #test.runWeek1()
