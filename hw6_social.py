@@ -4,6 +4,7 @@ Name: Ameen N.A
 Roll Number: 2021-IIITH-C2-002
 """
 
+from nltk.util import pr
 import hw6_social_tests as test
 
 project = "Social" # don't edit this
@@ -11,7 +12,6 @@ project = "Social" # don't edit this
 ### PART 1 ###
 
 import pandas as pd
-import re
 import nltk
 nltk.download('vader_lexicon', quiet=True)
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
@@ -81,16 +81,26 @@ Returns: list of strs
 '''
 #https://note.nkmk.me/en/python-str-replace-translate-re-sub/ (Referred)
 def findHashtags(message):
-    strLst=message.split(" ")
     resLst=[]
-    for each in strLst:
-        if each.find("#") != -1:
-            index=each.find("#")
-            each=re.sub("[^\w#]\w*","",each[index:])
-            each=each.split("#")
-            for all in each:
-                if(all != ""):
-                    resLst.append("#"+all)
+    startindex=-1
+    endindex=-1
+    length=len(message)
+    for i in range(length):
+        if message[i]=="#" and startindex == -1:
+            startindex=i
+        if(startindex!=-1):
+            if(message[i] in endChars):
+                endindex=i
+                if(startindex < endindex):
+                    resLst.append(message[startindex:endindex])
+                if(message[i] == "#"):
+                    startindex=i
+                else:
+                    startindex=-1
+            elif(i == (length-1)):
+                endindex=i+1
+                if(startindex < endindex):
+                    resLst.append(message[startindex:endindex])
     return resLst
 
 
@@ -172,7 +182,17 @@ Parameters: dataframe ; str ; str
 Returns: dict mapping strs to ints
 '''
 def getDataCountByState(data, colName, dataToCount):
-    return
+    newdic={}
+    for index,row in data.iterrows():
+        if(colName == dataToCount == ""):
+            if(row["state"] not in newdic):
+                newdic[row["state"]]=0
+            newdic[row["state"]]+=1
+        elif(row[colName] == dataToCount):
+            if(row["state"] not in newdic):
+                newdic[row["state"]]=0
+            newdic[row["state"]]+=1
+    return newdic
 
 
 '''
@@ -316,9 +336,11 @@ def scatterPlot(xValues, yValues, labels, title):
 # This code runs the test cases to check your work
 if __name__ == "__main__":
     print("\n" + "#"*15 + " WEEK 1 TESTS " +  "#" * 16 + "\n")
-    test.testFindSentiment()
-    test.testAddSentimentColumn()
-    #test.week1Tests()
+    # test.testFindSentiment()
+    # test.testAddSentimentColumn()
+    #test.testFindHashtags()
+    test.week2Tests()
+    #test.testGetDataCountByState()
     print("\n" + "#"*15 + " WEEK 1 OUTPUT " + "#" * 15 + "\n")
     #test.runWeek1()
 
