@@ -4,6 +4,7 @@ Name: Ameen N.A
 Roll Number: 2021-IIITH-C2-002
 """
 
+from itertools import count
 from nltk.util import pr
 import hw6_social_tests as test
 
@@ -254,7 +255,21 @@ Parameters: dataframe ; str
 Returns: float
 '''
 def getHashtagSentiment(data, hashtag):
-    return
+    totalScore=0
+    occurence=0
+    positive=1
+    negative=-1
+    neutral=0
+    for index,row in data.iterrows():
+        if(hashtag in findHashtags(row['text'])):
+            if(row['sentiment'] == 'positive'):
+                totalScore+=positive
+            elif(row['sentiment'] == 'negative'):
+                totalScore+=negative
+            elif(row['sentiment'] == 'neutral'):
+                totalScore+=neutral
+            occurence+=1
+    return totalScore/occurence
 
 
 ### PART 3 ###
@@ -358,19 +373,15 @@ def scatterPlot(xValues, yValues, labels, title):
 # This code runs the test cases to check your work
 if __name__ == "__main__":
     print("\n" + "#"*15 + " WEEK 1 TESTS " +  "#" * 16 + "\n")
-    # test.testFindSentiment()
-    # test.testAddSentimentColumn()
-    #test.testFindHashtags()
-    test.week2Tests()
-    #test.testGetDataCountByState()
+    test.week1Tests()
     print("\n" + "#"*15 + " WEEK 1 OUTPUT " + "#" * 15 + "\n")
-    #test.runWeek1()
+    test.runWeek1()
 
     ## Uncomment these for Week 2 ##
-    """print("\n" + "#"*15 + " WEEK 2 TESTS " +  "#" * 16 + "\n")
+    print("\n" + "#"*15 + " WEEK 2 TESTS " +  "#" * 16 + "\n")
     test.week2Tests()
     print("\n" + "#"*15 + " WEEK 2 OUTPUT " + "#" * 15 + "\n")
-    test.runWeek2()"""
+    test.runWeek2()
 
     ## Uncomment these for Week 3 ##
     """print("\n" + "#"*15 + " WEEK 3 OUTPUT " + "#" * 15 + "\n")
