@@ -1,0 +1,57 @@
+Semester,#1 original,#2 original,#3 original,#1 cleaned,#2 cleaned,#3 cleaned,#1 category,#2 category,#3 category
+S21,Spanish Delight,Oreo,Strawberry,spanish delight,oreo,strawberry,other,cookie,fruit
+S21,Vanilla,Strawberry ,Chocolate ,vanilla,strawberry ,chocolate ,vanilla,other,other
+S21,butterscotch,Strawberry,Pista,butterscotch,strawberry,pista,other,fruit,other
+S21,butterscotch,Vanilla,Chocolate,butterscotch,vanilla,chocolate,other,vanilla,chocolate
+S21,Chocolate,Vanilla,Mango,chocolate,vanilla,mango,chocolate,vanilla,fruit
+S21,Butterscotch,Cookies and cream ,black currant,butterscotch,cookies and cream ,black currant,other,other,other
+S21,Butterscotch,Chocolate,Vanilla,butterscotch,chocolate,vanilla,other,chocolate,vanilla
+S21,Butterscotch,Strawberry,Blueberry,butterscotch,strawberry,blueberry,other,fruit,fruit
+S21,Chocolate,Spanish delite,Strawberry,chocolate,spanish delite,strawberry,chocolate,other,fruit
+S21,Chocolate,Spanish delight,Vanilla,chocolate,spanish delight,vanilla,chocolate,other,vanilla
+S21,Mango,Tender coconut ,Butterscotch ,mango,tender coconut ,butterscotch ,fruit,other,other
+S21,Pista,Chocolate,Vanilla,pista,chocolate,vanilla,other,chocolate,vanilla
+S21,Spanish Delight,butterscotch,Oreo,spanish delight,butterscotch,oreo,other,other,cookie
+S21,Black Currant,Vanilla,Chocolate,black currant,vanilla,chocolate,other,vanilla,chocolate
+S21,Butterscotch ,Chocolate ,Vanilla ,butterscotch ,chocolate ,vanilla ,other,other,other
+ ,Butterscotch,Vanilla,Pistachio,butterscotch,vanilla,pistachio,other,vanilla,other
+ ,Butterscotch,Pista,Chocolate,butterscotch,pista,chocolate,other,other,chocolate
+ ,butterscotch ,Pistachio ,Vanilla ,butterscotch ,pistachio ,vanilla ,other,other,other
+ ,Tender Coconut,butterscotch,Vanilla,tender coconut,butterscotch,vanilla,other,other,vanilla
+ ,Black currant,butterscotch,Strawberry,black currant,butterscotch,strawberry,other,other,fruit
+ ,Butterscotch ,Vanilla,Chocolate ,butterscotch ,vanilla,chocolate ,other,vanilla,other
+ ,Chocolate,Butterscotch,Vanilla,chocolate,butterscotch,vanilla,chocolate,other,vanilla
+ ,Butterscotch ,Blueberry ,Rocky road ,butterscotch ,blueberry ,rocky road ,other,other,other
+ ,Spanish delight,Strawberry,Mango,spanish delight,strawberry,mango,other,fruit,fruit
+ ,Chocolate ,Butterscotch ,Strawberry ,chocolate ,butterscotch ,strawberry ,other,other,other
+ ,Strawberry ,Vanilla ,Chocolate ,strawberry ,vanilla ,chocolate ,other,other,other
+ ,Chocolate,Strawberry,Butterscotch,chocolate,strawberry,butterscotch,chocolate,fruit,other
+ ,Strawberry,Chocolate,Pistachio,strawberry,chocolate,pistachio,fruit,chocolate,other
+ ,Strawberry,Chocolate,Butterscotch,strawberry,chocolate,butterscotch,fruit,chocolate,other
+ ,Spanish delight,Butterscotch,Vanilla,spanish delight,butterscotch,vanilla,other,other,vanilla
+ ,Blueberry ,Butterscotch ,Vanilla ,blueberry ,butterscotch ,vanilla ,other,other,other
+ ,Cream stone Choco Lava,Butterscotch,Vanilla,cream stone choco lava,butterscotch,vanilla,other,other,vanilla
+ ,Chocolate,Strawberry,Butterscotch,chocolate,strawberry,butterscotch,chocolate,fruit,other
+ ,Vanilla,Chocolate ,butterscotch ,vanilla,chocolate ,butterscotch ,other,other,other
+ ,Strawberry ,Chocolate ,Blueberry ,strawberry ,chocolate ,blueberry ,other,other,other
+ ,butterscotch,Chocolate,Vanilla,butterscotch,chocolate,vanilla,other,chocolate,other
+ ,Strawberry,Chocolate,Vanilla,strawberry,chocolate,vanilla,fruit,chocolate,vanilla
+ ,black currant,Cottoncandy,Chocolate,black currant,cottoncandy,chocolate,other,other,chocolate
+ ,Strawberry,Vanilla,Choco,strawberry,vanilla,choco,fruit,other,chocolate
+ ,Chocolate,Vanilla,Mango,chocolate,vanilla,mango,chocolate,vanilla,fruit
+ ,Chocolate ,Vanilla ,Butterscotch ,chocolate ,vanilla ,butterscotch ,other,other,other
+ ,Strawberry ,Mango,Chocolate,strawberry ,mango,chocolate,fruit,fruit,chocolate
+ ,Vanilla,Strawberry,Chocolate,vanilla,strawberry,chocolate,vanilla,fruit,chocolate
+ ,Chocolate,Chocolate,Chocolate,chocolate,chocolate,chocolate,chocolate,chocolate,chocolate
+ ,butterscotch,Vanilla,Chocolate,butterscotch,vanilla,chocolate,other,vanilla,chocolate
+ ,Mango,Strawberry,Pista,mango,strawberry,pista,fruit,fruit,other
+ ,Butterscotch,Chocolate,Pista,butterscotch,chocolate,pista,other,chocolate,other
+ ,butterscotch,Vanilla ,Strawberry ,butterscotch,vanilla ,strawberry ,other,other,other
+ ,Vanilla,Pista,Chocolate,vanilla,pista,chocolate,vanilla,other,chocolate
+ ,Butterscotch,Strawberry,Vanilla,butterscotch,strawberry,vanilla,other,fruit,other
+ ,Butterscotch ,Vanilla,Strawberry ,butterscotch ,vanilla,strawberry ,other,vanilla,other
+ ,Oreo,Chocolate,black currant,oreo,chocolate,black currant,cookie,chocolate,other
+ ,Butterscotch,Red velvet,Black forest,butterscotch,red velvet,black forest,other,other,other
+ ,Chocolate,Pista,Vanilla,chocolate,pista,vanilla,chocolate,other,vanilla
+ ,Butterscotch,Pista,Vanilla,butterscotch,pista,vanilla,other,other,vanilla
+ ,Chocolate,Spanish delight,Butterscotch,chocolate,spanish delight,butterscotch,chocolate,other,other
