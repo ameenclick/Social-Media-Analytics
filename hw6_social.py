@@ -298,8 +298,6 @@ Parameters: dict mapping strs to ints ; dict mapping strs to ints ; int ; str
 Returns: None
 '''
 def graphTopNStates(stateCounts, stateFeatureCounts, n, title):
-    stateCounts=dict(sorted(stateCounts.items(), key=lambda item:item[1], reverse=True))
-    stateFeatureCounts=dict(sorted(stateFeatureCounts.items(), key=lambda item:item[1], reverse=True))
     featureRate={}
     for key in stateFeatureCounts:
         featureRate[key]=stateFeatureCounts[key]/stateCounts[key]
