@@ -235,7 +235,16 @@ Parameters: dict mapping strs to ints ; int
 Returns: dict mapping strs to ints
 '''
 def mostCommonHashtags(hashtags, count):
-    return
+    hashtags=dict(sorted(hashtags.items(), key=lambda item:item[1], reverse=True))
+    result={}
+    if(count==0):
+        return result
+    for key in hashtags:
+        result[key]=hashtags[key]
+        count-=1
+        if(count<=0):
+            return result
+    return result
 
 
 '''
